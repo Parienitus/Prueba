@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Corporal Interactivo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            position: relative;
+        }
+        .muscle-map {
+            width: 500px;
+            max-width: 100%;
+        }
+        .hotspot {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 0, 0, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.imgur.com/8Km9tLL.png" class="muscle-map" alt="Mapa Corporal">
+        
+        <!-- Hotspots para los músculos -->
+        <div class="hotspot" style="top: 40%; left: 42%;" onclick="selectMuscle('Pecho')"></div>
+        <div class="hotspot" style="top: 50%; left: 50%;" onclick="selectMuscle('Espalda')"></div>
+        <div class="hotspot" style="top: 60%; left: 45%;" onclick="selectMuscle('Piernas')"></div>
+        <div class="hotspot" style="top: 45%; left: 35%;" onclick="selectMuscle('Bíceps')"></div>
+        <div class="hotspot" style="top: 45%; left: 55%;" onclick="selectMuscle('Tríceps')"></div>
+    </div>
+
+    <script>
+        function selectMuscle(muscle) {
+            alert("Mostrando datos para: " + muscle);
+            window.location.href = "https://www.appsheet.com/start/YOUR_APP_ID?table=REGISTRO&filter=[GrupoMuscular]='" + muscle + "'";
+        }
+    </script>
+</body>
+</html>
